@@ -1,6 +1,6 @@
-class AmorphicAgent:
+class CommunicationHandler:
     def __init__(self):
-        # Initialize the agent
+        # Initialize the communication handler
         ...
 
     def process_voice_input(self, voice_input):
@@ -28,5 +28,5 @@ class AmorphicAgent:
         ...
 
     def run(self):
-        # Run the agent
+        # Run the communication handler
         ...

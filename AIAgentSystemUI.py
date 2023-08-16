@@ -1,35 +1,23 @@
-from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QTextEdit, QLineEdit
+from agentmemory-main import AgentMemory
 
-
-class AIAgentSystemUI(QWidget):
+class AIAgentSystemUI:
     def __init__(self):
-        super().__init__()
-        self.initUI()
+        self.memory = AgentMemory()
 
-    def initUI(self):
-        self.setWindowTitle('AI Agent System')
+    def store_memory(self, memory):
+        self.memory.store_memory(memory)
 
-        self.layout = QVBoxLayout()
-        self.setLayout(self.layout)
+    def retrieve_memory(self):
+        return self.memory.retrieve_memory()
 
-        self.text_area = QTextEdit()
-        self.layout.addWidget(self.text_area)
+    def voice_interaction(self):
+        self.agent.voice_interaction()
 
-        self.text_input = QLineEdit()
-        self.layout.addWidget(self.text_input)
+    def chat_interaction(self):
+        self.agent.chat_interaction()
 
-        self.send_button = QPushButton('Send')
-        self.layout.addWidget(self.send_button)
+    def email_interaction(self):
+        self.agent.email_interaction()
 
-        self.send_button.clicked.connect(self.display_system_info)
-        self.send_button.clicked.connect(self.move_agent)
-
-    def display_system_info(self):
-        message = self.text_input.text()
-        self.text_area.append(message)
-        self.text_input.clear()
-
-    def move_agent(self):
-        direction = self.text_input.text()
-        self.text_area.append(f'Moving agent {direction}')
-        self.text_input.clear()
+    def text_interaction(self):
+        self.agent.text_interaction()

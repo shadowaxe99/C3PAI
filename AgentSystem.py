@@ -1,10 +1,35 @@
 class AgentSystem:
 
-    def __init__(self):
+    from amorphic_agent import AmorphicAgent
+
+def __init__(self):
         self.agents = {}
+        self.create_amorphic_agent()
+
+def create_amorphic_agent(self):
+        agent = AmorphicAgent()
+        agent_id = id(agent)
+        self.agents[agent_id] = agent
+        return agent_id
 
     def start(self):
         print('Starting the agent system...')
+        for agent in self.agents.values():
+            agent.voice_interaction()
+            agent.chat_interaction()
+            agent.email_interaction()
+            agent.text_interaction()
+
+    def stop(self):
+        print('Stopping the agent system...')
+
+    def start(self):
+        print('Starting the agent system...')
+        for agent in self.agents.values():
+            agent.voice_interaction()
+            agent.chat_interaction()
+            agent.email_interaction()
+            agent.text_interaction()
 
     def stop(self):
         print('Stopping the agent system...')
